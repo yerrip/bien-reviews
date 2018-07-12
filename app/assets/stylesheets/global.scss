@@ -1,0 +1,27 @@
+$green: #3BC8AA;
+$orange: #FF551A;
+$black: #1E1E1E;
+$cream: #FFECCF;
+$purple: #31234E;
+$pink: #FFC6C6;
+
+
+$titleFont: "PT Serif";
+$bodyFont: "Work Sans";
+
+
+body {
+  font-family: $bodyFont;
+  color: $black;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: $titleFont;
+  color: $green;
+}
+
+h2 {
+  font-family: $titleFont;
+}
