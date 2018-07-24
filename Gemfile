@@ -31,8 +31,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'mini_magick', '~> 4.8'
 
 #add in our geocoding
-
 gem 'geocoder'
+
+#make our forms nice and simple
+gem 'simple_form'
+
+#gem for active Turbolinks
+gem 'active_link_to'
 
 
 
