@@ -16,6 +16,7 @@ gem 'pg'
 end
 
 
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -48,6 +49,8 @@ gem 'simple_form'
 #gem for active Turbolinks
 gem 'active_link_to'
 
+#profanity filter gem
+gem "profanity_filter"
 
 
 # Use Capistrano for deployment
