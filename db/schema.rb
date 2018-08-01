@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_23_225428) do
+ActiveRecord::Schema.define(version: 2018_07_31_232814) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.integer "review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["review_id"], name: "index_comments_on_review_id"
   end
 
@@ -34,6 +35,16 @@ ActiveRecord::Schema.define(version: 2018_07_23_225428) do
     t.text "address"
     t.float "latitude"
     t.float "longitude"
+    t.integer "user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.string "real_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
