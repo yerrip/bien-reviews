@@ -4,6 +4,32 @@
 
 <h2><%= @review.restaurant %></h2>
 
+<% if is_logged_in? %>
+
+<p>
+  <% if @review.bookmarks.where(user: @current_user).any? %>
+  <%= link_to "Unbookmark", review_bookmark_path(@review), method: :delete %>
+
+  <% else %>
+
+  <%= link_to "Bookmark", review_bookmark_path(@review), method: :post %>
+
+  <% end %>
+
+</p>
+
+<% end %>
+
+<h3>Bookmarked By...</h3>
+
+<ul>
+  <% @review.bookmarks.each do |bookmark| %>
+
+    <li><%= bookmark.user.username %></li>
+
+  <% end %>
+</ul>
+
 <div class="score">
   <%= @review.score %> / 10
 </div>
@@ -11,8 +37,8 @@
 <div class="user">
   Posted by
 
-  <% if review.username.present? %>
-  <%= link_to review.user.username, user_path(@review.user) %>
+  <% if @review.user.present? %>
+  <%= link_to @review.user.username, user_path(@review.user) %>
   <% else %>
   anonymous
   <% end %>
